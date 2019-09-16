@@ -1075,3 +1075,6 @@ on property:ro.multisim.simslotcount=1
 
 on property:ro.multisim.simslotcount=2
     setprop persist.radio.multisim.config dsds
+
+on property:apexd.status=ready
+    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind

@@ -298,6 +298,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.contents_mode="aes-256-xts" \
     ro.crypto.volume.filenames_mode="aes-256-cts"
 
+# APEX
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/ld.config.txt_swcodec:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
+
 # custom OTA server
 PRODUCT_PROPERTY_OVERRIDES += \
     lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
