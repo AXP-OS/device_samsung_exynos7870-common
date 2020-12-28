@@ -173,7 +173,8 @@ BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
 # Shim
 TARGET_LD_SHIM_LIBS += \
-    /system/bin/mediaserver|/system/lib/libstagefright_shim.so
+    /system/bin/mediaserver|/system/lib/libstagefright_shim.so \
+    /system/lib/libaudioroute.so|/vendor/lib/mixer_update_shim.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
