@@ -284,6 +284,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnl
 
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="j5y17ltexx-user 9 PPR1.180610.011 J530FXXS7CTF1 release-keys"
+BUILD_FINGERPRINT := "samsung/j5y17ltexx/j5y17lte:9/PPR1.180610.011/J530FXXS7CTF1:user/release-keys"
+
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
