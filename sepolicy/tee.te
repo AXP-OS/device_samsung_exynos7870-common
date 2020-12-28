@@ -7,3 +7,5 @@ allow tee { efs_file prov_efs_file }:file r_file_perms;
 
 # sys.mobicore.enable
 set_prop(tee, tee_prop)
+
+allow tee vendor_default_prop:property_service set; 

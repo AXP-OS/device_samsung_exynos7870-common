@@ -93,7 +93,25 @@ allow init proc_sec:file { rw_file_perms setattr };
 
 # Sockets
 allow init socket_device:sock_file { read write getattr setattr create unlink };
+allow init fwmarkd_socket:sock_file write;
+allow init self:tcp_socket getopt;
 
-# allow init hal_drm_hwservice:hwservice_manager add;
+#allow init hal_drm_hwservice:hwservice_manager add;
+#allow init device:chr_file { open read write };
+#allow init vendor_file:file execute_no_trans;
+#allow init device:chr_file { read write open };
+
+allow init dnsproxyd_socket:sock_file write;
+allow init hwservicemanager:binder call;
+allow init netd:unix_stream_socket connectto;
+#allow init system_suspend:binder call;
+
+allow init system_suspend_hwservice:hwservice_manager find;
+allow init device:chr_file { ioctl };
+allow init gps_vendor_data_file:file lock;
+allow init kernel:system module_request;
+allow init self:tcp_socket create;
+allow init sysfs:file setattr;
+allow init sysfs_wake_lock:file { write open };
 
 allow init boot_debug:process { noatsecure rlimitinh siginh transition };

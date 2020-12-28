@@ -1,1 +1,12 @@
+allow zygote gpu_device:chr_file ioctl;
+allow zygote device:file { open write };
+allow zygote nfc_prop:property_service set;
+#allow zygote nfc_service:service_manager add;
+allow zygote radio_prop:property_service set;
+allow zygote rild:binder call;
+#allow zygote secure_element_service:service_manager { add find };
+allow zygote servicemanager:binder call;
+allow zygote system_server:binder { call transfer };
+allow zygote tmpfs:file { read write };
+
 dontaudit zygote proc_cmdline:file r_file_perms;

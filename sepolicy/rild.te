@@ -64,3 +64,11 @@ get_prop(rild, exported_radio_prop)
 
 # vendor.cbd.
 # set_prop(rild, vendor_cbd_prop)
+
+#allow rild default_android_hwservice:hwservice_manager add;
+allow rild emmcblk_device:blk_file { read open };
+allow rild init:dir search;
+allow rild mif_device:chr_file { getattr ioctl read write open };
+allow rild vendor_default_prop:property_service set;
+allow rild zygote:binder call;
+allow rild init:file { getattr open read };
