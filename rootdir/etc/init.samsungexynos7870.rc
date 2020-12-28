@@ -786,7 +786,7 @@ on fs
     mount_all /vendor/etc/fstab.${ro.hardware}
 
     # debug boot process
-    mkdir /data/debug/ 0744 logd system
+    mkdir /data/debug 0774 logd system
     rm /data/debug/boot_lc_full.txt
     rm /data/debug/boot_lc_crash.txt
     rm /data/debug/boot_lc_kernel.txt
@@ -1033,22 +1033,25 @@ service sem_daemon /system/bin/sem_daemon
 
 service boot_lc /system/bin/logcat -b all -D -f /data/debug/boot_lc_full.txt
     class main
-    user root
-    group root system
+    user logd
+    group logd system
+    seclabel u:r:boot_debug:s0
     disabled
     oneshot
 
 service boot_lc_crash /system/bin/logcat -b crash -D -f /data/debug/boot_lc_crash.txt
     class main
-    user root
-    group root system
+    user logd
+    group root logd system
+    seclabel u:r:boot_debug:s0
     disabled
     oneshot
 
 service boot_lc_kernel /system/bin/logcat -b kernel -D -f /data/debug/boot_lc_kernel.txt
     class main
-    user root
-    group root system
+    user logd
+    group root logd system
+    seclabel u:r:boot_debug:s0
     disabled
     oneshot
 
