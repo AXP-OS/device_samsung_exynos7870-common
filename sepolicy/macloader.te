@@ -1,0 +1,12 @@
+type macloader, domain;
+type macloader_exec, exec_type, vendor_file_type, file_type;
+
+# macloader is started by init, type transit from init domain to macloader domain
+init_daemon_domain(macloader)
+
+allow macloader efs_file:dir search;
+
+allow macloader wifi_efs_file:dir search;
+allow macloader wifi_efs_file:file { open read };
+
+allow macloader mediaserver_exec:file read;
