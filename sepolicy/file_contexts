@@ -56,6 +56,9 @@
 # Knox status
 /dev/knox_kap                u:object_r:knox_device:s0
 
+# gnss
+/dev/gnss_ipc			u:object_r:gps_device:s0
+
 # audio hal
 /dev/i2c-20			u:object_r:audio_device:s0
 
