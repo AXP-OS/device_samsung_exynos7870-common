@@ -292,5 +292,9 @@ BUILD_FINGERPRINT := "samsung/j5y17ltexx/j5y17lte:9/PPR1.180610.011/J530FXXS7CTF
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+# custom OTA server
+PRODUCT_PROPERTY_OVERRIDES += \
+    lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
+
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal7870-common/universal7870-common-vendor.mk)
