@@ -28,6 +28,7 @@ BOARD_VENDOR := samsung
 TARGET_BOOTLOADER_BOARD_NAME := universal7870
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos7870
+#TARGET_SLSI_VARIANT := bsp
 
 # Architecture
 TARGET_ARCH := arm64
@@ -178,7 +179,9 @@ BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy/vendor
 # Shim
 TARGET_LD_SHIM_LIBS += \
     /system/bin/mediaserver|/system/lib/libstagefright_shim.so \
-    /system/lib/libaudioroute.so|/vendor/lib/mixer_update_shim.so
+    /system/lib/libaudioroute.so|/vendor/lib/mixer_update_shim.so \
+    /vendor/lib/hw/camera.universal7870.so|/vendor/lib/libexynoscamera_shim.so \
+    /vendor/lib64/hw/camera.universal7870.so|/vendor/lib64/libexynoscamera_shim.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
