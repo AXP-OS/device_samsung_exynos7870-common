@@ -7,6 +7,6 @@ init_daemon_domain(macloader)
 allow macloader efs_file:dir search;
 
 allow macloader wifi_efs_file:dir search;
-allow macloader wifi_efs_file:file { open read };
+allow macloader wifi_efs_file:file { open read getattr };
 
 allow macloader mediaserver_exec:file read;
