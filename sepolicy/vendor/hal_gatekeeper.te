@@ -1,0 +1,2 @@
+allow hal_gatekeeper_default efs_file:file { rw_file_perms create };
+allow hal_gatekeeper_default efs_file:dir { write add_name};

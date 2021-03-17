@@ -22,3 +22,6 @@ allow kernel tmpfs:dir search;
 allow kernel self:capability sys_module;
 allow kernel sysfs_input:dir search;
 allow kernel sysfs_input:file { open read };
+
+allow kernel device:blk_file { create getattr setattr unlink };
+allow kernel device:dir { add_name remove_name write };

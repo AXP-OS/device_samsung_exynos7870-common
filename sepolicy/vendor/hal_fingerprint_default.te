@@ -2,9 +2,8 @@ allow hal_fingerprint_default sysfs_input:dir search;
 allow hal_fingerprint_default sysfs_input:file rw_file_perms;
 
 allow hal_fingerprint_default fingerprintd_data_file:dir write;
-allow hal_fingerprint_default vendor_data_file:dir { add_name open read remove_name rmdir write };
-allow hal_fingerprint_default vendor_data_file:file { getattr open read rename unlink };
+allow hal_fingerprint_default vendor_data_file:dir { add_name open read remove_name rmdir write create };
+allow hal_fingerprint_default vendor_data_file:file { getattr open read rename unlink create write };
 
 allow hal_fingerprint_default biometrics_vendor_data_file:dir { add_name create open read remove_name rmdir search write };
 allow hal_fingerprint_default biometrics_vendor_data_file:file { create getattr open read rename unlink write };
-
