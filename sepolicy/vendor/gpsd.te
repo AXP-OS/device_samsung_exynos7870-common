@@ -41,3 +41,6 @@ allow gpsd gps_vendor_data_file:fifo_file create_file_perms;
 allow gpsd sysfs_gps:file { open read getattr };
 allow gpsd sysfs_wake_lock:file { open write };
 allow gpsd gps_device:chr_file { read write open ioctl };
+
+# /system/etc/hosts
+allow gpsd system_file:file lock;
