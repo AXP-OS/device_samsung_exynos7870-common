@@ -271,7 +271,7 @@ PRODUCT_PACKAGES += \
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.vendor_security_patch=2019-11-01
+    ro.build.vendor_security_patch=2020-07-21
 
 # VNDK
 PRODUCT_PACKAGES += \
