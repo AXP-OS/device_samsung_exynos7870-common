@@ -292,6 +292,12 @@ BUILD_FINGERPRINT := "samsung/j5y17ltexx/j5y17lte:9/PPR1.180610.011/J530FXXS7CTF
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+# set correct adoptable storage crypto modes
+# see: https://source.android.com/security/encryption/file-based#enabling-fbe-on-adoptable-storage
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.contents_mode="aes-256-xts" \
+    ro.crypto.volume.filenames_mode="aes-256-cts"
+
 # custom OTA server
 PRODUCT_PROPERTY_OVERRIDES += \
     lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
