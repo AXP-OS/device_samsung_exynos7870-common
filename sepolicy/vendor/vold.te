@@ -9,7 +9,7 @@ allow vold emmcblk_device:blk_file { setattr unlink rw_file_perms ioctl };
 # see:
 # https://selinuxproject.org/page/XpermRules
 # system/sepolicy/public/ioctl_defines
-allowxperm vold emmcblk_device:blk_file ioctl BLKGETSIZE64;
+allowxperm vold emmcblk_device:blk_file ioctl { BLKGETSIZE64 BLKSECDISCARD };
 
 allow vold sysfs_sswap:file write;
 
