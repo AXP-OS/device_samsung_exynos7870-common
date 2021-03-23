@@ -11,3 +11,7 @@ allow hal_sensors_default sysfs_input:dir { open read search };
 allow hal_sensors_default sysfs_input:file { open read write };
 allow hal_sensors_default sysfs_sensors:dir search;
 allow hal_sensors_default sysfs_sensors:file { getattr open read write };
+
+# magnetometer
+allow hal_sensors_default gyro_data_file:dir { write add_name search };
+allow hal_sensors_default gyro_data_file:file { create open read write };
