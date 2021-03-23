@@ -1,6 +1,6 @@
 allow vendor_init block_device:lnk_file setattr;
 allow vendor_init cache_file:dir search;
-allow vendor_init camera_data_file:dir { setattr create };
+allow vendor_init camera_data_file:dir { setattr create read open ioctl };
 allow vendor_init proc_vm:file write;
 allow vendor_init system_data_file:dir { remove_name setattr write add_name create };
 allow vendor_init cache_private_backup_file:dir setattr;
@@ -8,5 +8,5 @@ allow vendor_init tmpfs:dir { add_name write };
 allow vendor_init cache_backup_file:dir setattr;
 
 # boot debug
-allow vendor_init boot_log_file:dir { create search setattr remove_name write };
+allow vendor_init boot_log_file:dir { create search setattr remove_name write read open ioctl };
 allow vendor_init boot_log_file:file unlink;
