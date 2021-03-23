@@ -101,8 +101,9 @@
 /data/gps/nmeapipe                                   u:object_r:gps_data_file:s0
 
 # magnetometer
-/data/system/yas_lib.cfg(.tmp)?			u:object_r:gyro_data_file:s0
+/data/system/yas_lib(/.*)?			u:object_r:gyro_data_file:s0
 
+# fingerprint
 /data/biometrics(/.*)?       u:object_r:fingerprintd_data_file:s0
 
 # camera
