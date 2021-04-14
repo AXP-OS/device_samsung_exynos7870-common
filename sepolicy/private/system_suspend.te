@@ -1,0 +1,8 @@
+# I was not able to set:
+#allow system_suspend hal_audio_default:binder transfer;
+# as hal_audio_default is part of vendor which is not avail in private
+# but system_suspend is part of private and not avail in vendor.
+#
+# the following fixes the first call on boot issue until I find a better
+# way fixing that:
+permissive system_suspend;
