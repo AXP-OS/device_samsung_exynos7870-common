@@ -302,9 +302,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ld.config.txt_swcodec:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
 
-# custom OTA server
+# custom OTA server (when not an official build)
+ifeq ($(LINEAGE_BUILDTYPE),"UNOFFICIAL")
 PRODUCT_PROPERTY_OVERRIDES += \
     lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
+endif
+ifeq ($(LINEAGE_BUILDTYPE),"CUSTOM")
+PRODUCT_PROPERTY_OVERRIDES += \
+    lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
+endif
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal7870-common/universal7870-common-vendor.mk)
