@@ -303,11 +303,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ld.config.txt_swcodec:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
 
 # custom OTA server (when not an official build)
-ifeq ($(LINEAGE_BUILDTYPE),"UNOFFICIAL")
+CURBTYPE=$(shell echo $$EOS_RELEASE_TYPE)
+ifeq ($(CURBTYPE),UNOFFICIAL)
 PRODUCT_PROPERTY_OVERRIDES += \
     lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
 endif
-ifeq ($(LINEAGE_BUILDTYPE),"CUSTOM")
+ifeq ($(CURBTYPE),CUSTOM)
 PRODUCT_PROPERTY_OVERRIDES += \
     lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
 endif
