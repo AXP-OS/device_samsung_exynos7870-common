@@ -306,11 +306,11 @@ PRODUCT_COPY_FILES += \
 CURBTYPE=$(shell echo $$EOS_RELEASE_TYPE)
 ifeq ($(CURBTYPE),UNOFFICIAL)
 PRODUCT_PROPERTY_OVERRIDES += \
-    lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
+    lineage.updater.uri=https://sfxota.binbash.rocks:8010/e-os/a10/api/v1/{device}/{type}/{incr}
 endif
 ifeq ($(CURBTYPE),CUSTOM)
 PRODUCT_PROPERTY_OVERRIDES += \
-    lineage.updater.uri=http://sfxota.binbash.rocks:8009/e-os/a10/api/v1/{device}/{type}/{incr}
+    lineage.updater.uri=https://sfxota.binbash.rocks:8010/e-os/a10/api/v1/{device}/{type}/{incr}
 endif
 
 # call the proprietary setup
