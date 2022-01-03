@@ -68,3 +68,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     net.tethering.noprovisioning=true
+
+# fix stretched cam preview
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.hal1.packagelist=org.lineageos.snap,net.sourceforge.opencamera,foundation.e.camera,com.whatsapp
+    #vendor.camera.hal1.packagelist=org.telegram.messenger,com.skype.raider,com.whatsapp,com.instagram.android
