@@ -1,2 +1,4 @@
+# neverallow:
 #allow hal_nfc_default default_android_hwservice:hwservice_manager add;
+
 allow hal_nfc_default vendor_default_prop:property_service set;
