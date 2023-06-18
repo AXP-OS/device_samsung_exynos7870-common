@@ -114,8 +114,6 @@ allow init self:tcp_socket create;
 allow init sysfs:file setattr;
 allow init sysfs_wake_lock:file { write open };
 
-allow init boot_debug:process { noatsecure rlimitinh siginh transition };
-
 # allow bind mount of apex ld.config.txt
 allow init system_file:file mounton;
 
