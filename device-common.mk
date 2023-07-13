@@ -94,7 +94,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5-impl \
     android.hardware.camera.provider@2.5-service \
     libion_exynos \
-    Snap
+    Snap\
+    camera.exynos5
 
 # Camera configurations
 PRODUCT_COPY_FILES += \
