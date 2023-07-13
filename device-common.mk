@@ -90,12 +90,17 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.common@1.0-helper \
-    android.hardware.camera.provider@2.5-impl \
-    android.hardware.camera.provider@2.5-service \
-    libion_exynos \
-    Snap\
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    camera.device@3.3-impl \
+    camera.device@3.4-impl \
+    libexynoscamera_shim \
+    libcamera_client_shim \
     camera.exynos5
+
+# Camera service
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/camera/vendor.samsung.hardware.camera.provider@2.5-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.samsung.hardware.camera.provider@2.5-service.rc
 
 # Camera configurations
 PRODUCT_COPY_FILES += \
@@ -257,7 +262,6 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libexynoscamera_shim \
     libstagefright_shim \
     mixer_update_shim
 
