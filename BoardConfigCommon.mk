@@ -174,14 +174,13 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(LOCAL_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := $(LOCAL_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy/vendor
 
-# Shims
+# Shim
 TARGET_LD_SHIM_LIBS += \
     /system/bin/mediaserver|/system/lib/libstagefright_shim.so \
     /system/lib/libaudioroute.so|/vendor/lib/mixer_update_shim.so \
     /vendor/lib/hw/camera.universal7870.so|/vendor/lib/libexynoscamera_shim.so \
     /vendor/lib64/hw/camera.universal7870.so|/vendor/lib64/libexynoscamera_shim.so \
-    /vendor/lib/libexynoscamera.so|libexynoscamera_shim.so \
-    /system/vendor/lib/libexynoscamera3.so|libexynoscamera_shim.so
+    /vendor/lib/libexynoscamera.so|libexynoscamera_shim.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
