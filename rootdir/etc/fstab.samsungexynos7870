@@ -11,7 +11,7 @@
 /dev/block/platform/13540000.dwmmc0/by-name/EFS			/mnt/vendor/efs	        ext4		noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic		wait,check
 
 # Updater service by /misc (disabled)
-#/dev/block/platform/13540000.dwmmc0/by-name/OTA	                /misc                   emmc            defaults                                                                                        defaults
+/dev/block/platform/13540000.dwmmc0/by-name/OTA	                /misc                   emmc            defaults                                                                                        defaults
 
 # VOLD
 /devices/13560000.dwmmc2/mmc_host/mmc*                          auto                    auto            defaults                                                                                        voldmanaged=sdcard:auto
