@@ -4,6 +4,7 @@
 allow hal_sensors_default cgroup:file getattr;
 
 allow hal_sensors_default app_efs_file:dir search;
+allow hal_sensors_default app_efs_file:file { open write };
 allow hal_sensors_default efs_file:dir search;
 allow hal_sensors_default mediaserver_exec:file { getattr read };
 allow hal_sensors_default sensor_efs_file:file { open read write };
