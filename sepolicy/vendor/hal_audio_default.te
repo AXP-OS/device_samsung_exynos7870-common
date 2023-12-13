@@ -7,4 +7,3 @@ allow hal_audio_default efs_file:dir search;
 allow hal_audio_default rild:unix_stream_socket connectto;
 allow hal_audio_default system_suspend_hwservice:hwservice_manager find;
 
-allow hal_audio_default system_suspend:binder call;
