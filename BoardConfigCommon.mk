@@ -184,3 +184,7 @@ TARGET_LD_SHIM_LIBS += \
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
+
+# even though we include vendor/axp/config/common.mk we need to include AXP's own BoardConfig
+# (after the above definitions & includes), too so we we can make use of the conditions within
+include vendor/axp/BoardConfigVendor.mk
